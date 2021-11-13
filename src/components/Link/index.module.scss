@@ -1,0 +1,15 @@
+@import "../../css/variables.scss";
+
+.root {
+	font-size: inherit;
+	text-decoration: none;
+
+	&[data-underline="always"] {
+		text-decoration: underline;
+	}
+	&[data-underline="hover"] {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

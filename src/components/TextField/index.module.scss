@@ -1,0 +1,75 @@
+@import "../../css/variables.scss";
+
+.root {
+	position: relative;
+	
+	.label {
+		position: relative;
+		font-size: 16px;
+		color: gray;
+		margin-bottom: 4px;
+		width: 100%;
+
+		.required {
+			color: red;
+		}
+	}
+
+	.wrapper {
+		position: relative;
+		width: 100%;
+		border: 1px solid lightgray;
+		border-radius: 7px;
+		overflow: hidden;
+		display: flex;
+
+		.input {
+			border: none;
+			outline: 0px;
+			background-color: white;
+			padding: 12px 12px;
+			height: 46px;
+			flex-grow: 1;
+			font-size: 18px;
+			resize: vertical;
+			color: rgba(0, 0, 0, 0.84);
+			font-family: $font-family;
+			&::placeholder {
+				font-family: $font-family;
+				color: gray;
+				font-size: 18px;
+			}
+			&[data-textarea="true"] {
+				height: 100px;
+			}
+		}
+
+		.copy {
+			position:relative;
+			height: 46px;
+			width: 46px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.area {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 36px;
+				height: 36px;
+				border-radius: 4px;
+				background-color: rgba(0, 0, 0, .05);
+
+				i {
+					font-size: 22px;
+					color: #4a4a4a;
+					&[data-copied="true"] {
+						color: #4caf50;
+					}
+				}
+			}
+		}
+	}
+}
