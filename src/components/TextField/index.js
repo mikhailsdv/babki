@@ -7,7 +7,7 @@ import copy from 'copy-to-clipboard';
 import styles from "./index.module.scss"
 
 const TextField = props => {
-	const {required, allowCopy, value, onChange = () => {}, label, textarea, className, ...rest} = props
+	const {helperText, errorText, required, allowCopy, value, onChange = () => {}, label, textarea, className, ...rest} = props
 
 	const InputElem = textarea ? "textarea" : "input"
 
@@ -15,12 +15,15 @@ const TextField = props => {
 
 	const copyToken = useCallback(() => {
 		if (copy(value)) {
+			!isCopied && setTimeout(() => {
+				setIsCopied(false)
+			}, 2000)
 			setIsCopied(true)
 		}
 		else {
 			alert("Ну удалось скопировать текст. Попробуйте вручную.")
 		}
-	}, [value])
+	}, [value, isCopied])
 
 	return (
 		<div className={styles.root}>
@@ -45,6 +48,8 @@ const TextField = props => {
 					</div>
 				</div>}
 			</div>
+			{errorText && <div className={styles.error}>{errorText}</div>}
+			{!errorText && helperText && <div className={styles.helper}>{helperText}</div>}
 		</div>
 	)
 }
