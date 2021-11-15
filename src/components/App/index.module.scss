@@ -3,5 +3,27 @@
 .inlineImage {
 	display: inline;
 	height: 1em;
+	margin-top: -6px;
 	vertical-align: middle;
+}
+
+.qiwiWidget {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	overflow: hidden;
+
+	.qiwiAdjust {
+		overflow: hidden;
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+
+		iframe {
+			margin: -2px -8px -30px -8px;
+		}
+	}
 }

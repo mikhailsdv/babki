@@ -2,6 +2,7 @@ import React from "react"
 
 import Card from "../Card"
 import TextField from "../TextField"
+import Label from "../Label"
 import Link from "../Link"
 import YooMoneyForm from "../YooMoneyForm"
 
@@ -33,12 +34,30 @@ const App = () => {
 				title={<span>На QIWI <img alt="kiwi" className={styles.inlineImage} src={require("../../img/kiwi.png").default} /></span>}
 				className={styles.kaspi}
 			>
-				По законодательству Казахстана на данный момент невозможно повысить статус кошелька до профессионального, поэтому не факт, что вам подойдет данный способ.
-				<br /><br />
+				<Label>Проще всего — через виджет:</Label>
+				<div className={styles.qiwiWidget}>
+					<div className={styles.qiwiAdjust}>
+						<iframe
+							src="https://widget.qiwi.com/widgets/middle-widget-300x300?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPs8uHMiMWYcuuk2YUi8U7RSwpvNJzUpZHw1RoTwojCyaJwuCEgFBfju4wWucDTiN9h5E1td77t1GzoiBiZqfxjJM8hDManiycYeAZ9gPyH&noCache=true"
+							width="300"
+							height="300"
+							allowtransparency="true"
+							scrolling="no"
+							frameBorder="0"
+						></iframe>
+					</div>
+				</div>
+				<br />
 				<TextField
-					label="По номеру телефона:"
+					label="Можно по номеру телефона:"
 					allowCopy
 					value="+7 700 262 25 63"
+				/>
+				<br />
+				<TextField
+					label="Или по номеру карты:"
+					allowCopy
+					value="4890 4947 5421 8501"
 				/>
 			</Card>
 			<br />
