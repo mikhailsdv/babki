@@ -3,6 +3,7 @@ import classnames from "classnames"
 import urlqueryobject from "urlqueryobject"
 
 import TextField from "../TextField"
+import Label from "../Label"
 
 import styles from "./index.module.scss"
 
@@ -215,7 +216,7 @@ const YooMoneyForm = props => {
 			/>
 			<br />
 
-			<div className={styles.label}>Откуда переводим?</div>
+			<Label>Откуда переводим?</Label>
 			<input type="hidden" name="paymentType" value={payBy} />
 			<div className={styles.radio}>
 				{paymentTypes.map(({value, label, image}) => <div
