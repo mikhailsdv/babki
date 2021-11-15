@@ -3,16 +3,8 @@
 .root {
 	position: relative;
 	
-	.label {
-		position: relative;
-		font-size: 16px;
-		color: gray;
-		margin-bottom: 4px;
-		width: 100%;
-
-		.required {
-			color: red;
-		}
+	.required {
+		color: red;
 	}
 
 	.wrapper {

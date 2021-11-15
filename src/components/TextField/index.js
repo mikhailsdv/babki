@@ -4,6 +4,8 @@ import '@material/react-material-icon/index.scss';
 import MaterialIcon from '@material/react-material-icon';
 import copy from 'copy-to-clipboard';
 
+import Label from "../Label"
+
 import styles from "./index.module.scss"
 
 const TextField = props => {
@@ -27,7 +29,7 @@ const TextField = props => {
 
 	return (
 		<div className={styles.root}>
-			{label && <div className={styles.label}>{label}{required && <sup className={styles.required}> *</sup>}</div>}
+			{label && <Label>{label}{required && <sup className={styles.required}> *</sup>}</Label>}
 			<div className={styles.wrapper}>
 				<InputElem
 					value={value}
