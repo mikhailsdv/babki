@@ -167,7 +167,7 @@ const YooMoneyForm = props => {
 		},
 	]
 
-	const [comment, setComment] = useState(params.comment || "")
+	const [comment, setComment] = useState(params.comment ? decodeURI(params.comment) : "")
 	const [sum, setSum] = useState(params.sum ? transformSum(params.sum) : "")
 	const [payBy, setPayBy] = useState(paymentTypes.find(item => item.value === params.payby) ? params.payby : "PC")
 
