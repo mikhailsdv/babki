@@ -8,26 +8,26 @@
 	.wrapper {
 		position: relative;
 		padding-bottom: $image-size-half;
-	
+
 		.card {
 			position: relative;
-			border: 1px solid lightgray;
 			border-radius: 20px;
 			background-color: white;
 			padding: 20px 20px 28px 20px;
 			width: calc(100% - #{$image-size-half});
 			left: $image-size-half;
 			overflow: hidden;
+			transition: 0.2s ease-out;
 
 			.title {
 				font-size: 24px;
-				color: rgba(0, 0, 0, .84);
+				color: rgba(0, 0, 0, 0.84);
 				margin-bottom: 12px;
 			}
 		}
 
 		.image {
-			position:absolute;
+			position: absolute;
 			left: 0;
 			bottom: 0;
 			width: $image-size;
@@ -35,6 +35,7 @@
 			overflow: hidden;
 			border-radius: 100%;
 			background-color: lightgray;
+			transition: 0.2s ease-out;
 			z-index: 9;
 
 			img {

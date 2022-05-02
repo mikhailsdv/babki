@@ -7,7 +7,7 @@ import styles from "./index.module.scss"
 const Card = props => {
 	const {children, image, title, className, ...rest} = props
 
-	const [avgImageColor, setAvgImageColor] = useState("rgba(0, 0, 0, 0)")
+	const [avgImageColor, setAvgImageColor] = useState("rgba(0, 0, 0, .5)")
 
 	useEffect(() => {
 		;(async () => {
@@ -28,7 +28,10 @@ const Card = props => {
 					<div className={styles.title}>{title}</div>
 					{children}
 				</div>
-				<div className={styles.image} style={{"boxShadow": `0px 8px 10px -2px ${avgImageColor}`}}>
+				<div
+					className={styles.image}
+					style={{boxShadow: `0px 8px 8px -3px ${avgImageColor}`}}
+				>
 					<img src={image} alt="logo" />
 				</div>
 			</div>
